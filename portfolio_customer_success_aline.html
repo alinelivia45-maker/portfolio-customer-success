@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto de Customer Success — Aline Livia Xavier da Silva</title>
+<meta name="description" content="Projeto prático autoral de Customer Success e Onboarding desenvolvido por Aline Livia Xavier da Silva.">
+<style>
+:root{
+  --bg:#f7f8fc;--card:#fff;--text:#172033;--muted:#667085;--line:#e6e8ef;
+  --primary:#5b5ce2;--primary2:#7c5cff;--green:#20a46b;--yellow:#d99000;--red:#d64545;
+  --shadow:0 12px 35px rgba(25,32,56,.08);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.container{width:min(1080px,calc(100% - 36px));margin:auto}
+.hero{background:linear-gradient(135deg,#171a3a 0%,#34338c 55%,#6652d9 100%);color:#fff;padding:76px 0 64px}
+.badge{display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);border-radius:999px;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.08;margin:0 0 18px;letter-spacing:-1.5px}
+.hero p{max-width:760px;color:#e9eaff;font-size:18px;margin:0 0 28px}
+.author{font-weight:700}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;gap:8px;overflow:auto;padding:10px 0}
+.nav a{text-decoration:none;white-space:nowrap;padding:8px 12px;border-radius:10px;font-size:13px;color:var(--muted)}
+.nav a:hover{background:#f0efff;color:var(--primary)}
+section{padding:54px 0}
+.section-title{font-size:30px;margin:0 0 8px;letter-spacing:-.5px}
+.section-subtitle{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+.kpi{font-size:31px;font-weight:800;color:var(--primary);margin-bottom:2px}
+.small{font-size:13px;color:var(--muted)}
+.timeline{position:relative;margin-top:24px}
+.step{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0}
+.day{font-weight:800;color:var(--primary)}
+.step h3{margin:0 0 7px}
+.step p{margin:0;color:var(--muted)}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:5px 9px;border-radius:999px;margin-top:10px;background:#eeedff;color:#4d45bf}
+.health{border-left:5px solid;padding-left:18px}
+.green{border-color:var(--green)}.yellow{border-color:var(--yellow)}.red{border-color:var(--red)}
+.green .health-title{color:var(--green)}.yellow .health-title{color:var(--yellow)}.red .health-title{color:var(--red)}
+.health-title{font-weight:800}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+th{background:#f5f5fb;font-size:13px}
+td{font-size:14px;color:#475467}
+tr:last-child td{border-bottom:0}
+.quote{background:#171a3a;color:#fff;border-radius:var(--radius);padding:28px;font-size:20px;font-weight:700}
+footer{padding:36px 0 50px;color:var(--muted);font-size:13px;text-align:center}
+.note{background:#fff8e7;border:1px solid #f2dfaa;padding:16px 18px;border-radius:14px;color:#735500}
+ul{padding-left:20px}li{margin:6px 0}
+@media(max-width:760px){
+ .grid,.grid-2{grid-template-columns:1fr}
+ .step{grid-template-columns:1fr;gap:4px}
+ .hero{padding:56px 0 48px}
+ section{padding:42px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="badge">PORTFÓLIO • CUSTOMER SUCCESS</span>
+    <h1>Projeto Prático de<br>Customer Success & Onboarding</h1>
+    <p>Estruturação de uma jornada de clientes para um SaaS fictício de gestão de estoque, com foco em ativação, geração de valor, adoção, retenção e prevenção de churn.</p>
+    <div class="author">Aline Livia Xavier da Silva</div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container">
+    <a href="#visao">Visão geral</a><a href="#jornada">Onboarding</a><a href="#valor">TTV & Value</a>
+    <a href="#comunicacao">Comunicação</a><a href="#health">Health Score</a><a href="#churn">Churn</a>
+    <a href="#ongoing">Ongoing</a><a href="#metricas">Métricas</a>
+  </div>
+</nav>
+
+<main>
+<section id="visao">
+<div class="container">
+<h2 class="section-title">1. Visão geral</h2>
+<p class="section-subtitle">O projeto simula a atuação de Customer Success em uma empresa SaaS B2B.</p>
+<div class="grid">
+  <div class="card"><h3>Produto</h3><p>GestãoFácil — sistema web para controle de estoque, vendas, movimentações e relatórios.</p></div>
+  <div class="card"><h3>ICP</h3><p>Pequenos e médios comerciantes locais que precisam organizar estoque e melhorar a tomada de decisão.</p></div>
+  <div class="card"><h3>Objetivo do CS</h3><p>Garantir que o cliente alcance os resultados que justificaram a contratação e perceba valor contínuo.</p></div>
+</div>
+<div class="grid-2" style="margin-top:18px">
+ <div class="card"><h3>Principais dores</h3><ul><li>Falta de visibilidade do estoque</li><li>Perdas de mercadorias</li><li>Controles manuais</li><li>Dificuldade para acompanhar vendas</li><li>Reposição reativa</li></ul></div>
+ <div class="card"><h3>Resultados esperados</h3><ul><li>Melhor controle de estoque</li><li>Maior visibilidade das vendas</li><li>Processos mais eficientes</li><li>Decisões orientadas por dados</li><li>Maior autonomia da equipe</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="jornada">
+<div class="container">
+<h2 class="section-title">2. Jornada de Onboarding — 30 dias</h2>
+<p class="section-subtitle">O objetivo é reduzir o Time to Value sem comprometer a qualidade da implementação.</p>
+<div class="timeline">
+ <div class="step"><div class="day">DIA 1</div><div><h3>Kick-off</h3><p>Boas-vindas, entendimento das dores e objetivos, identificação dos usuários, definição dos critérios de sucesso, alinhamento de responsabilidades e configuração inicial.</p><span class="pill">30 min • Videoconferência</span></div></div>
+ <div class="step"><div class="day">ATÉ DIA 5</div><div><h3>Ativação & First Value</h3><p>Cliente cadastra produtos, registra a primeira venda e utiliza o sistema em uma operação real, percebendo um benefício concreto.</p><span class="pill">Marco de ativação + primeiro valor</span></div></div>
+ <div class="step"><div class="day">ATÉ DIA 10</div><div><h3>Treinamento & Adoção</h3><p>Treinamento dos principais usuários, acompanhamento da conclusão, identificação de dúvidas e estímulo ao uso das funcionalidades essenciais.</p><span class="pill">Foco em adoção, não apenas treinamento</span></div></div>
+ <div class="step"><div class="day">DIA 30</div><div><h3>Encerramento & Transição</h3><p>Revisão dos critérios de sucesso, avaliação inicial de Health Score, NPS, resolução de pendências e transição estruturada para a fase Ongoing.</p><span class="pill">Onboarding concluído</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="valor">
+<div class="container">
+<h2 class="section-title">3. TTV, Ativação & First Value</h2>
+<p class="section-subtitle">Três conceitos diferentes, acompanhados separadamente.</p>
+<div class="grid">
+ <div class="card"><div class="kpi">Ativação</div><h3>Começar a usar</h3><p>Cliente conclui ações fundamentais: produtos cadastrados, primeira venda, usuários configurados e movimentação de estoque.</p></div>
+ <div class="card"><div class="kpi">First Value</div><h3>Perceber benefício</h3><p>Cliente realiza uma operação real e percebe um benefício direto, como visualizar a atualização do estoque ou usar um relatório para decidir.</p></div>
+ <div class="card"><div class="kpi">TTV</div><h3>Tempo até o valor</h3><p>Tempo entre o início do onboarding e o momento em que o cliente alcança o First Value.</p></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Como medir o TTV</h3><p><strong>TTV = data do First Value − data de início do onboarding.</strong> O objetivo é reduzir esse tempo mantendo a qualidade da implementação.</p></div>
+</div>
+</section>
+
+<section id="comunicacao">
+<div class="container">
+<h2 class="section-title">4. Régua de comunicação</h2>
+<p class="section-subtitle">Comunicação proativa, contextualizada e orientada ao próximo passo.</p>
+<div class="grid-2">
+ <div class="card"><h3>Dia 1 — Boas-vindas</h3><p><strong>Assunto:</strong> Bem-vindo ao GestãoFácil! Vamos começar?</p><p style="margin-top:10px">Olá, [Nome]! Seja muito bem-vindo ao GestãoFácil. Sou Aline, responsável pelo acompanhamento de Customer Success. Nosso primeiro passo será o Kick-off para entendermos seus objetivos e iniciarmos a configuração da conta.</p></div>
+ <div class="card"><h3>Dia 7 — Engajamento</h3><p><strong>Assunto:</strong> Como está sendo sua experiência com o GestãoFácil?</p><p style="margin-top:10px">Olá, [Nome]! Como está sendo o início da utilização? Você conseguiu avançar no cadastro dos produtos e nas primeiras operações? Caso tenha encontrado alguma dificuldade, posso ajudar.</p></div>
+ <div class="card"><h3>Dia 30 — NPS</h3><p><strong>Assunto:</strong> Como foram seus primeiros 30 dias?</p><p style="margin-top:10px">De 0 a 10, o quanto você recomendaria o GestãoFácil para um amigo ou parceiro de negócios? Qual foi o principal motivo da sua avaliação?</p></div>
+ <div class="card"><h3>Princípio</h3><p>A régua deve ser adaptada ao comportamento do cliente. Se houver sinais de risco, o contato deve ser antecipado e direcionado ao diagnóstico.</p></div>
+</div>
+</div>
+</section>
+
+<section id="health">
+<div class="container">
+<h2 class="section-title">5. Health Score</h2>
+<p class="section-subtitle">A saúde da conta não é determinada por login isoladamente.</p>
+<div class="grid">
+ <div class="card health green"><div class="health-title">VERDE — Saudável</div><p style="margin-top:8px">Uso recorrente, funcionalidades principais adotadas, marcos alcançados, usuários engajados e percepção positiva.</p></div>
+ <div class="card health yellow"><div class="health-title">AMARELO — Atenção</div><p style="margin-top:8px">Queda de utilização, dificuldades recorrentes, redução da adoção, objetivos não alcançados ou feedbacks negativos/neutros.</p></div>
+ <div class="card health red"><div class="health-title">VERMELHO — Risco crítico</div><p style="margin-top:8px">Desengajamento prolongado, baixa adoção, falta de resposta, problemas recorrentes, insatisfação explícita ou intenção de cancelamento.</p></div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>Dimensões monitoradas</h3>
+<p>Frequência de uso • Adoção de funcionalidades • Marcos de sucesso • Tickets e suporte • Engajamento dos usuários • NPS/feedback • Objetivos de negócio • Interação com CS</p>
+</div>
+</div>
+</section>
+
+<section id="churn">
+<div class="container">
+<h2 class="section-title">6. Prevenção de Churn</h2>
+<p class="section-subtitle">Atuação preventiva para entender a causa do risco antes que ele resulte em cancelamento.</p>
+<div class="grid-2">
+ <div class="card"><h3>Gatilhos de risco</h3><ul><li>Redução significativa de utilização</li><li>Queda na adoção</li><li>NPS baixo</li><li>Reclamações recorrentes</li><li>Falta de engajamento</li><li>Falha na entrega de valor</li><li>Intenção de cancelamento</li></ul></div>
+ <div class="card"><h3>Plano de recuperação</h3><ol><li>Diagnosticar a causa</li><li>Realizar contato proativo</li><li>Alinhar com o responsável</li><li>Oferecer treinamento/reciclagem quando necessário</li><li>Definir plano de ação</li><li>Estabelecer indicador e prazo de recuperação</li></ol></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Plano emergencial de até 14 dias</h3><p>O plano deverá registrar problema, causa provável, ações, responsáveis, prazos, indicador de sucesso e data de reavaliação. A recuperação será considerada efetiva quando houver retomada da adoção e evolução dos critérios de sucesso.</p></div>
+</div>
+</section>
+
+<section id="ongoing">
+<div class="container">
+<h2 class="section-title">7. Ongoing</h2>
+<p class="section-subtitle">Depois do onboarding, o foco passa a ser valor contínuo, retenção e evolução do cliente.</p>
+<div class="grid-2">
+ <div class="card"><h3>Acompanhamento recorrente</h3><ul><li>Analisar Health Score</li><li>Acompanhar utilização</li><li>Identificar riscos</li><li>Avaliar adoção</li><li>Verificar evolução dos objetivos</li><li>Registrar interações relevantes</li></ul></div>
+ <div class="card"><h3>Revisão de valor</h3><ul><li>O problema inicial está sendo resolvido?</li><li>Quais melhorias foram percebidas?</li><li>Quais funcionalidades geram mais valor?</li><li>Quais processos ainda podem melhorar?</li><li>Quais são os próximos objetivos?</li></ul></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Expansão saudável</h3><p>Quando houver aderência e o cliente estiver saudável, o CSM pode identificar oportunidades de expansão, como novos usuários, módulos, funcionalidades ou unidades. A expansão deve partir de uma necessidade real e de geração de valor.</p></div>
+</div>
+</section>
+
+<section id="metricas">
+<div class="container">
+<h2 class="section-title">8. Métricas principais</h2>
+<p class="section-subtitle">Indicadores que permitem acompanhar a jornada de forma objetiva.</p>
+<table>
+<thead><tr><th>Indicador</th><th>O que responde?</th></tr></thead>
+<tbody>
+<tr><td><strong>TTV</strong></td><td>Quanto tempo o cliente leva para perceber valor?</td></tr>
+<tr><td><strong>Ativação</strong></td><td>O cliente concluiu os primeiros marcos de utilização?</td></tr>
+<tr><td><strong>First Value</strong></td><td>O cliente percebeu um benefício concreto?</td></tr>
+<tr><td><strong>Adoção</strong></td><td>As funcionalidades principais fazem parte da rotina?</td></tr>
+<tr><td><strong>Health Score</strong></td><td>Qual é a saúde atual da conta?</td></tr>
+<tr><td><strong>NPS</strong></td><td>Qual é a propensão do cliente a recomendar?</td></tr>
+<tr><td><strong>Churn</strong></td><td>Quantos clientes estão sendo perdidos?</td></tr>
+<tr><td><strong>Retenção</strong></td><td>Quanto da base permanece ao longo do tempo?</td></tr>
+<tr><td><strong>Engajamento</strong></td><td>O cliente está interagindo e utilizando a solução?</td></tr>
+<tr><td><strong>Expansão</strong></td><td>Clientes saudáveis estão ampliando seu uso?</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="quote">“Customer Success não é apenas ajudar o cliente a utilizar o produto. É garantir que ele alcance os resultados que justificaram a contratação.”</div>
+<div class="note" style="margin-top:18px"><strong>Nota de portfólio:</strong> a GestãoFácil é uma empresa fictícia criada exclusivamente para este projeto prático autoral. O objetivo é demonstrar a aplicação de conceitos de Customer Success em um cenário simulado.</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">Projeto autoral de portfólio • Aline Livia Xavier da Silva • Customer Success & Onboarding</div>
+</footer>
+</body>
+</html>
